@@ -10,6 +10,15 @@ namespace Hexagon
         static void Main(string[] args)
         {
             //Console.WriteLine("Hello World!");
+
+
+
         }
+
+        static void InitMap()
+        {
+            var list=  Policy.InitMap();
+        }
+
     }
 }

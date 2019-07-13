@@ -16,10 +16,24 @@ namespace Hexagon
             return null;
         }
 
+        /// <summary>
+        /// 得到周围相邻的的六边形
+        /// </summary>
+        /// <param name="hexagon"></param>
+        /// <returns></returns>
         public static List<Hexagon> GetAroundHexagon(Hexagon hexagon)
         {
+            //逆时针旋转，分别取各个相邻的，从12点，00点开始，2小时取一个边
+
+
+
+
             return null;
         }
+
+
+
+
 
 
         public static List<Hexagon> GetAroundHexagon(float px, float py)
