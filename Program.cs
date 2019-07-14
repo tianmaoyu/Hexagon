@@ -10,7 +10,7 @@ namespace Hexagon
         static void Main(string[] args)
         {
             //Console.WriteLine("Hello World!");
-
+            var map = new Hexagon[5, 5];
 
 
         }

@@ -7,9 +7,9 @@ namespace Hexagon
     public class Config
     {
       
-        public static int  Width_Count=10;
+        public static int  Width_Count=5;
 
-        public static int  Heigth_Count = 10;
+        public static int  Heigth_Count = 5;
 
 
         public const float Hexagon_Scale = 0.668f;
