@@ -4,3 +4,7 @@
 
 /obj/Debug/netcoreapp2.1
 /.vs/Hexagon/v15
+/Character/bin/Debug/netcoreapp2.1
+/Character/obj
+/Hexagon/obj/Debug/netcoreapp2.2
+/Hexagon/obj
