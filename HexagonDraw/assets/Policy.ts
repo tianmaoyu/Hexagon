@@ -11,7 +11,7 @@ export class Policy {
     // / <param name="py"></param>
     // / <returns></returns>
     public static  GetHexagon(px,  py):HexagonIndex {
-        var y = (py - Config.Hexagon_R) / 1.5 * Config.Hexagon_R;
+        var y = (py - Config.Hexagon_R) / (1.5 * Config.Hexagon_R);
 
         var y1 =Math.floor(y);
         var y2 = Math.ceil(y);
@@ -24,11 +24,11 @@ export class Policy {
         var list = new Array<HexagonIndex>();
         var index1=new HexagonIndex();index1.x=x1;index1.y=y1;
         list.push(index1);
-        var index2=new HexagonIndex();index1.x=x1;index1.y=y2;
-        list.push(index1);
-        var index3=new HexagonIndex();index1.x=x2;index1.y=y1;
+        var index2=new HexagonIndex();index2.x=x1;index2.y=y2;
+        list.push(index2);
+        var index3=new HexagonIndex();index3.x=x2;index3.y=y1;
         list.push(index3);
-        var index4=new HexagonIndex();index1.x=x2;index1.y=y2;
+        var index4=new HexagonIndex();index4.x=x2;index4.y=y2;
         list.push(index4);
         
         //清理不存在的
@@ -51,8 +51,12 @@ export class Policy {
         }
     }
 
-    public static Distance(px, py, hexagon: HexagonIndex): number {
-        var distance = Math.sqrt((px - hexagon.x) * (px - hexagon.x) + (py - hexagon.y) * (py - hexagon.y));
+    public static Distance(px, py, index: HexagonIndex): number {
+        
+        var hexagon=new Hexagon();
+        hexagon.x=index.x;
+        hexagon.y=index.y;
+        var distance = Math.sqrt((px - hexagon.getPx()) * (px - hexagon.getPx()) + (py - hexagon.getPy()) * (py - hexagon.getPy()));
         return distance;
     }
 

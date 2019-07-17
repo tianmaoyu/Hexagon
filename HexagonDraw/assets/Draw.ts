@@ -15,6 +15,9 @@ export default class Draw extends cc.Component {
 
     // use this for initialization
     onLoad() {
+        var canvasNode= cc.find("Canvas");
+
+        canvasNode.on(cc.Node.EventType.TOUCH_START,this.onClick,this);
         // this.doawCoordinate();
         this.doawAllHexgon();
         // ctx.moveTo(0,0);
@@ -24,6 +27,17 @@ export default class Draw extends cc.Component {
         // ctx.stroke();
     }
 
+    private onClick(event :cc.Event.EventTouch){
+        var x= event.getLocationX();
+        var y= event.getLocationY();
+        var ctx = this.getComponent(cc.Graphics);
+        ctx.strokeColor = ctx.strokeColor.fromHEX('#0000ff');
+        ctx.circle(x,y,2);
+        ctx.stroke();
+        cc.log(x,y);
+        var hexagonIndex= Policy.GetHexagon(x,y);
+        cc.log("hexagonIndex:("+hexagonIndex.x+":"+hexagonIndex.y+")");
+    }
 
     //坐标
     doawCoordinate() {

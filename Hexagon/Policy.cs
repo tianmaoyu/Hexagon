@@ -25,7 +25,7 @@ namespace Hexagon
         /// <returns></returns>
         public static HexagonIndex GetHexagon(float px, float py)
         {
-            var y= (py - Config.Hexagon_R) / 1.5f * Config.Hexagon_R;
+            var y= (py - Config.Hexagon_R) / (1.5f * Config.Hexagon_R);
 
             var y1 = (int)System.Math.Floor(y);
             var y2 = (int)System.Math.Ceiling(y);
@@ -61,12 +61,16 @@ namespace Hexagon
                     return item;
                 }
             }
-            throw new Exception($"没有在地图：px:{px} py:{py}");
+            return new HexagonIndex() {x=-1,y=-1};
         }
 
-        public static  float Distance(float px, float py, HexagonIndex hexagon)
+        public static  float Distance(float px, float py, HexagonIndex hexagonIndex)
         {
-            var distance = Math.Sqrt((px - hexagon.x) * (px - hexagon.x) + (py - hexagon.y) * (py - hexagon.y));
+            var hexagon = new Hexagon();
+            hexagon.x = hexagonIndex.x;
+            hexagon.y = hexagonIndex.y;
+
+            var distance = Math.Sqrt((px - hexagon.px) * (px - hexagon.px) + (py - hexagon.py) * (py - hexagon.py));
             return (float)distance;
         }
 
