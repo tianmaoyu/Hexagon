@@ -36,7 +36,12 @@ export default class Draw extends cc.Component {
         ctx.stroke();
         cc.log(x,y);
         var hexagonIndex= Policy.GetHexagon(x,y);
-        cc.log("hexagonIndex:("+hexagonIndex.x+":"+hexagonIndex.y+")");
+        if(hexagonIndex){
+            cc.log("hexagonIndex:("+hexagonIndex.x+":"+hexagonIndex.y+")");
+        }else{
+            cc.log("没有区域");
+        }
+      
     }
 
     //坐标
