@@ -23,7 +23,7 @@ namespace Hexagon
         /// <param name="px"></param>
         /// <param name="py"></param>
         /// <returns></returns>
-        public static Hexagon GetHexagon(float px, float py)
+        public static HexagonIndex GetHexagon(float px, float py)
         {
             var y= (py - Config.Hexagon_R) / 1.5f * Config.Hexagon_R;
 
@@ -43,15 +43,28 @@ namespace Hexagon
             //清理不存在的
             list.RemoveAll(i => i.x < 0 || i.y < 0 || i.x > Config.Width_Count || i.y > Config.Heigth_Count);
 
-            var hexagonDistances = list.Select(item => {return Policy.Map[item.x, item.y];})
-                                          .Select(i => new { Hexagon = i, Distance = Distance(px, py, i)});
-
-            var hexagonDistance=hexagonDistances.Where(i => i.Distance == hexagonDistances.Min(j => j.Distance)).First();
-
-            return hexagonDistance.Hexagon;
+            //如果有小于 h 的就是它
+            foreach(var item in list)
+            {
+                var distance = Policy.Distance(px, py, item);
+                if (distance <= Config.Hexagon_H)
+                {
+                    return item;
+                }
+            }
+            //如果有大于 h 小于 r 的就是它
+            foreach (var item in list)
+            {
+                var distance = Policy.Distance(px, py, item);
+                if (distance <= Config.Hexagon_R)
+                {
+                    return item;
+                }
+            }
+            throw new Exception($"没有在地图：px:{px} py:{py}");
         }
 
-        public static  float Distance(float px, float py, Hexagon hexagon)
+        public static  float Distance(float px, float py, HexagonIndex hexagon)
         {
             var distance = Math.Sqrt((px - hexagon.x) * (px - hexagon.x) + (py - hexagon.y) * (py - hexagon.y));
             return (float)distance;

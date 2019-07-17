@@ -17,7 +17,7 @@ namespace Hexagon
             get
             {
                 //偶数
-                if (this.x % 2 == 0)
+                if (this.y % 2 == 0)
                 {
                     return Config.Hexagon_H * (this.x * 2 + 1);
                 }
