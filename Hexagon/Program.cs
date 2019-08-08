@@ -9,6 +9,8 @@ namespace Hexagon
     {
         static void Main(string[] args)
         {
+
+            String ss = "ss";
             //Console.WriteLine("Hello World!");
             var map = new Hexagon[5, 5];
 

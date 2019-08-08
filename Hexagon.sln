@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexagon", "Hexagon\Hexagon.csproj", "{D81CF9CD-8C16-4160-A1EE-78FEA3800277}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Character", "Character\Character.csproj", "{4124E994-D07C-483E-8035-3DD56302CDA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Character", "Character\Character.csproj", "{4124E994-D07C-483E-8035-3DD56302CDA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkSample", "BenchmarkSample\BenchmarkSample.csproj", "{732ACB8A-52F1-4D09-A29F-46D3D9C524CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4124E994-D07C-483E-8035-3DD56302CDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4124E994-D07C-483E-8035-3DD56302CDA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4124E994-D07C-483E-8035-3DD56302CDA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{732ACB8A-52F1-4D09-A29F-46D3D9C524CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{732ACB8A-52F1-4D09-A29F-46D3D9C524CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{732ACB8A-52F1-4D09-A29F-46D3D9C524CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{732ACB8A-52F1-4D09-A29F-46D3D9C524CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
